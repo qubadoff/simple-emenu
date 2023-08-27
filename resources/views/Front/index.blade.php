@@ -11,7 +11,7 @@
                             <div class="position-relative">
                                 <div class="product-back"><img src="{{ url('/') }}/storage/{{ $item->image }}" alt class="img-fluid rounded-top"></div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" @if(! $item->image) style="background-color: {{ $item->color }}" @endif>
                                 <div class="d-flex justify-content-between">
                                     <div class="h4 fw-bold">
                                         {{ $item->name }}
