@@ -8,9 +8,11 @@
             @forelse($products as $item)
                 <div class="col-12 col-md-4">
                         <div class="card rounded-4 shadow border-0 overflow-hidden">
-                            <div class="position-relative">
-                                <div class="product-back"><img src="{{ url('/') }}/storage/{{ $item->image }}" alt class="img-fluid rounded-top"></div>
-                            </div>
+                            @if($item->image)
+                                <div class="position-relative">
+                                    <div class="product-back"><img src="{{ url('/') }}/storage/{{ $item->image }}" alt class="img-fluid rounded-top"></div>
+                                </div>
+                            @endif
                             <div class="card-body" @if(! $item->image) style="background-color: {{ $item->color }}" @endif>
                                 <div class="d-flex justify-content-between">
                                     <div class="h4 fw-bold">
