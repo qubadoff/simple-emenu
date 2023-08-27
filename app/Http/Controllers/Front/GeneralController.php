@@ -16,6 +16,13 @@ class GeneralController extends Controller
         return \view('Front.index', compact('products'));
     }
 
+    public function categories(): View
+    {
+        $cats = Category::orderBy('sort', 'asc')->get();
+
+        return \view('Front.categories', compact('cats'));
+    }
+
     public function brend(): View
     {
         return \view('Front.brend');
